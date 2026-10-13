@@ -24,6 +24,12 @@ export default function PublicSchedule({ publicId, cancelMode = false }) {
   const [pending, setPending] = useState(false)
   const [notice, setNotice] = useState(null)
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    if (!schedule || cancelMode) return
+    document.title = `${schedule.title} | Usher Sign Up`
+    return () => { document.title = 'Usher Sign Up | A Welcome for Everyone' }
+  }, [schedule?.title, cancelMode])
   const [cancelling, setCancelling] = useState(false)
   const submitting = useRef(false)
   const pendingSignup = useRef(null)
