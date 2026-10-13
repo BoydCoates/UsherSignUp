@@ -132,8 +132,10 @@ a:focus-visible { outline-color: var(--utica-green-dark); }
 .admin-back-link:focus-visible { outline: 3px solid var(--utica-green-dark); outline-offset: 3px; }
 .admin-dashboard { background: #f1f5f8; color: var(--utica-blue); }
 .dashboard-top { border-color: #d7e0e8; }
+.dashboard-top > .brand { transform: translateY(12px); }
 .dashboard-content { padding-top: 78px; }
 .dashboard-user { color: #405a73; font-size: 14px; }
+.dashboard-user { transform: translateY(12px); }
 .dashboard-user button { min-height: 44px; color: var(--utica-blue); font-size: 14px; }
 .admin-avatar { color: var(--utica-blue-deep); background: #e4f1cc; }
 .dashboard-welcome p:not(.eyebrow) { color: #526a80; font-size: 15px; }
