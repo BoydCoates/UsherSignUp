@@ -1,12 +1,14 @@
 ﻿import './App.css'
 
+import Admin from './Admin'
+
 const steps = [
   ['01', 'Learn about the team', 'Discover how ushers welcome guests and help each service run smoothly.'],
   ['02', 'Find a time to serve', 'Speak with your usher team leader about available services and how to sign up.'],
   ['03', 'Come ready to welcome', 'Confirm when to arrive and where to meet. Your team will help you get started.'],
 ]
 
-export default function App() {
+export default function App({ adminConfigured = false }) {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
@@ -45,8 +47,11 @@ export default function App() {
           <div><p className="eyebrow">YOU’RE INVITED</p><h2 id="start-title">Bring your willingness.<br />We’ll start from there.</h2><p>You don’t need to have it all figured out. Introduce yourself to the usher team leader at your next service to learn about opportunities, expectations, and how to sign up.</p></div>
           <div className="first-time"><span className="symbol" aria-hidden="true">✳</span><h3>First time serving?</h3><p>Ask about where to meet, when to arrive, and who you’ll serve alongside. Your team leader can help you prepare.</p><a className="text-link" href="#how-it-works">Review the steps ↑</a></div>
         </section>
+        <section className="wrap admin-section" id="admin">
+          {adminConfigured ? <Admin /> : <div className="admin-panel"><h2>Admin sign-in</h2><p>Admin sign-in will be available once the website is connected to its database.</p></div>}
+        </section>
       </main>
-      <footer className="site-footer"><a className="brand" href="#home"><span className="brand-mark" aria-hidden="true">u.</span>Usher Sign Up</a><p>Serving together. Welcoming everyone.</p><a href="#home">Back to top ↑</a></footer>
+      <footer className="site-footer"><a className="brand" href="#home"><span className="brand-mark" aria-hidden="true">u.</span>Usher Sign Up</a><p>Serving together. Welcoming everyone.</p><a href="#admin">Admin sign-in</a><a href="#home">Back to top ↑</a></footer>
     </>
   )
 }

@@ -57,3 +57,16 @@ h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
 .skip-link:focus { top: 16px; }
 @media (max-width: 850px) { .hero { gap: 28px; padding-top: 50px; } .plant { right: 10px; } .sun { left: 20px; } .purpose { gap: 35px; } .get-started { gap: 40px; } }
 @media (max-width: 650px) { .site-header { padding: 20px; flex-wrap: wrap; } nav { gap: 15px; width: 100%; justify-content: space-between; font-size: 12px; } .nav-button { padding: 8px 10px; } .hero { grid-template-columns: 1fr; padding: 40px 20px; gap: 35px; } h1 { font-size: 49px; } .welcome-art { width: 100%; max-width: 440px; margin: auto; } .purpose { grid-template-columns: 1fr; padding: 40px 20px; gap: 25px; } h2 { font-size: 32px; } .role-grid { gap: 20px; } .how-section { margin-inline: 12px; padding: 35px 20px; } .steps-heading { align-items: start; flex-direction: column; gap: 15px; } .steps-heading>p { max-width: none; } .steps-grid { grid-template-columns: 1fr; gap: 25px; margin-top: 25px; } .step-number { margin-bottom: 12px; } .get-started { grid-template-columns: 1fr; padding: 40px 20px; gap: 30px; } .first-time { padding-left: 22px; } .site-footer { flex-wrap: wrap; padding: 24px 20px; } .site-footer p { width: 100%; order: 3; } .hero .eyebrow { font-size: 9px; letter-spacing: .6px; } }
+.admin-section { padding: 20px 36px 60px; }
+.admin-panel { max-width: 540px; padding: 30px; border: 1px solid #dedfd6; border-radius: 12px; background: #f0f1e9; margin: auto; }
+.admin-panel h2 { margin-bottom: 20px; }
+.admin-panel p { font-size: 14px; color: #617169; }
+.admin-panel form { display: grid; gap: 12px; margin-top: 24px; }
+.admin-panel label { font-size: 14px; font-weight: 600; }
+.admin-panel input { width: 100%; border: 1px solid #9fae9f; border-radius: 5px; padding: 12px; font: inherit; color: #263f39; background: #fff; margin-bottom: 5px; }
+.admin-panel input:focus-visible { outline: 3px solid #6b8051; outline-offset: 2px; }
+.admin-panel button { border: 0; cursor: pointer; justify-content: center; font-family: inherit; margin-top: 12px; }
+.admin-panel button:disabled { opacity: .65; cursor: wait; }
+.admin-panel button:focus-visible { outline: 3px solid #bc622f; outline-offset: 4px; }
+.admin-panel .admin-error { color: #9b3428; }
+@media (max-width: 650px) { .admin-section { padding: 15px 20px 40px; } .admin-panel { padding: 24px; } }
