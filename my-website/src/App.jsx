@@ -40,7 +40,7 @@ export default function App({ adminConfigured = false }) {
           </div>
         </section>
         <section className="how-section wrap" id="how-it-works" aria-labelledby="steps-title">
-          <div className="steps-heading"><div><p className="eyebrow">YOUR NEXT STEP</p><h2 id="steps-title">Serving starts simply.</h2></div><p>A little of your time can mean a lot to someone else.</p></div>
+          <div className="steps-heading"><div><p className="eyebrow">YOUR NEXT STEP</p><h2 id="steps-title">Serving simply starts here.</h2></div><p>A little of your time can mean a lot to someone else.</p></div>
           <div className="steps-grid">{steps.map(([number, title, description]) => <article className="step" key={number}><span className="step-number">{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
         </section>
         <section className="get-started wrap" id="get-started" aria-labelledby="start-title">
