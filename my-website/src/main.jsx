@@ -11,6 +11,6 @@ const convex = import.meta.env.VITE_CONVEX_URL
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {convex ? <ConvexAuthProvider client={convex}><App adminConfigured /></ConvexAuthProvider> : <App backendConfigured={false} />}
+    {convex ? <ConvexAuthProvider client={convex}><App /></ConvexAuthProvider> : <App backendConfigured={false} />}
   </StrictMode>,
 )
