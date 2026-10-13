@@ -1,6 +1,7 @@
 ﻿import './App.css'
 
 import Admin from './Admin'
+import PublicSchedule from './PublicSchedule'
 
 const steps = [
   ['01', 'Learn about the team', 'Discover how ushers welcome guests and help each service run smoothly.'],
@@ -8,7 +9,12 @@ const steps = [
   ['03', 'Come ready to welcome', 'Confirm when to arrive and where to meet. Your team will help you get started.'],
 ]
 
-export default function App({ adminConfigured = false }) {
+export default function App({ adminConfigured = false, backendConfigured = true }) {
+  const path = window.location.pathname
+  const scheduleMatch = path.match(/^\/s\/([^/]+)\/?$/)
+  if (scheduleMatch) return backendConfigured ? <PublicSchedule publicId={decodeURIComponent(scheduleMatch[1])} /> : <BackendUnavailable />
+  if (path === '/cancel' || path === '/cancel/') return backendConfigured ? <PublicSchedule cancelMode /> : <BackendUnavailable />
+  if (path === '/admin' || path === '/admin/') return backendConfigured ? <Admin /> : <BackendUnavailable />
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
@@ -54,4 +60,8 @@ export default function App({ adminConfigured = false }) {
       <footer className="site-footer"><a className="brand" href="#home"><span className="brand-mark" aria-hidden="true">u.</span>Usher Sign Up</a><p>Serving together. Welcoming everyone.</p><a href="#admin">Admin sign-in</a><a href="#home">Back to top ↑</a></footer>
     </>
   )
+}
+
+function BackendUnavailable() {
+  return <main className="public-shell"><header className="public-top"><a className="brand" href="/"><span className="brand-mark">u.</span>Usher Sign Up</a></header><section className="empty-card"><span className="empty-icon">✳</span><h1>Schedules are getting ready</h1><p>This site is not connected to its Convex deployment yet. Ask your team leader to finish the website setup.</p><a className="primary-button" href="/">Return home</a></section></main>
 }
