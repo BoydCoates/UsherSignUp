@@ -87,6 +87,7 @@ export default function PublicSchedule({ publicId, cancelMode = false }) {
         <div className={`schedule-state state-${schedule.status}`}><span className="state-dot" />{schedule.status === 'published' ? 'Sign-ups are open' : schedule.status === 'closed' ? 'Sign-ups are closed' : 'Service completed'}</div>
       </section>
       {schedule.status !== 'published' && <div className="closed-note">{schedule.status === 'closed' ? 'You can still view the team roster, but sign-ups and cancellations are closed.' : 'This service schedule is available for reference.'}</div>}
+      <img className="schedule-photo" src="/downstairs-aisles.png" alt="Church sanctuary aisles" />
       <div className="position-heading"><div><p className="eyebrow">FIND YOUR PLACE</p><h2>Choose a position</h2></div><p>One position per person for this service.</p></div>
       <div className="category-list">{schedule.categories.map((category) => <section className="public-category" key={category.id}><div className="category-title"><span className="category-star">✳</span><h3>{category.name}</h3></div><div className="position-list">{category.positions.map((position) => {
         const status = position.remaining === 0 ? 'full' : position.remaining === 1 ? 'almost' : 'available'
