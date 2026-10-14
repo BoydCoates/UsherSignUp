@@ -238,3 +238,6 @@ button:focus-visible,.primary-button:focus-visible,.secondary-button:focus-visib
   .signup-photo { width: calc(100% + 44px); margin: -34px -22px 21px; }
   .schedule-photo { margin: 22px auto 28px; border-radius: 11px; }
 }
+.home-context { margin: 24px 0; text-align: left; border-top: 1px solid #dedfd6; padding-top: 24px; }
+.home-context h2 { font-size: 26px; margin-bottom: 16px; }
+.home-context p { color: #617169; font-size: 15px; line-height: 1.7; margin: 12px 0; }

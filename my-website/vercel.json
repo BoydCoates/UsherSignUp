@@ -1,4 +1,9 @@
 {
+  "headers": [
+    { "source": "/s/:publicId", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] },
+    { "source": "/cancel", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] },
+    { "source": "/admin", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }
+  ],
   "rewrites": [
     { "source": "/s/:publicId", "destination": "/api/s/:publicId" },
     { "source": "/(.*)", "destination": "/index.html" }
