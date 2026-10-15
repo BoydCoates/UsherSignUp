@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="900" height="760" viewBox="0 0 900 760" fill="none">
+  <defs>
+    <linearGradient id="glass" x1="500" y1="120" x2="500" y2="660" gradientUnits="userSpaceOnUse"><stop stop-color="#8EBA93" stop-opacity=".55"/><stop offset="1" stop-color="#285B72" stop-opacity=".12"/></linearGradient>
+    <radialGradient id="light"><stop stop-color="#C9DE8D" stop-opacity=".23"/><stop offset="1" stop-color="#173B60" stop-opacity="0"/></radialGradient>
+    <linearGradient id="cross" x1="470" y1="200" x2="535" y2="440"><stop stop-color="#E0EAB6"/><stop offset="1" stop-color="#9ABB65"/></linearGradient>
+  </defs>
+  <ellipse cx="520" cy="310" rx="360" ry="340" fill="url(#light)"/>
+  <path d="M250 675V288a250 250 0 0 1 500 0v387" stroke="#9FBF8D" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M290 675V290a210 210 0 0 1 420 0v385" stroke="#BCD39A" stroke-opacity=".3" stroke-width="2"/>
+  <path d="M330 675V292a170 170 0 0 1 340 0v383H330Z" fill="url(#glass)" stroke="#C8DCA5" stroke-opacity=".36" stroke-width="2"/>
+  <path d="M500 125v550M330 450h340M350 215l300 300M650 215L350 515" stroke="#C2D49E" stroke-opacity=".14" stroke-width="1.5"/>
+  <path d="M488 239h24v84h70v24h-70v130h-24V347h-70v-24h70v-84Z" fill="url(#cross)"/>
+  <path d="M270 675h460M230 697h540M180 723h640" stroke="#B4C993" stroke-opacity=".2" stroke-width="2"/>
+  <path d="M735 660c-10-64 20-128 70-170M760 572c-46 0-61-24-62-54 40 0 64 18 62 54ZM780 539c-1-39 19-60 57-65 5 34-17 62-57 65Z" fill="#88AE76" fill-opacity=".3" stroke="#AFC78E" stroke-opacity=".35"/>
+  <circle cx="210" cy="200" r="3" fill="#BDCF91" fill-opacity=".5"/><circle cx="770" cy="290" r="3" fill="#BDCF91" fill-opacity=".5"/><circle cx="690" cy="105" r="2" fill="#BDCF91" fill-opacity=".5"/>
+</svg>
