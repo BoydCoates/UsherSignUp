@@ -10,8 +10,11 @@
 
 import type * as admin from "../admin.js";
 import type * as auth from "../auth.js";
+import type * as homepage from "../homepage.js";
+import type * as homepageFields from "../homepageFields.js";
 import type * as http from "../http.js";
 import type * as provision from "../provision.js";
+import type * as public_ from "../public.js";
 
 import type {
   ApiFromModules,
@@ -22,8 +25,11 @@ import type {
 declare const fullApi: ApiFromModules<{
   admin: typeof admin;
   auth: typeof auth;
+  homepage: typeof homepage;
+  homepageFields: typeof homepageFields;
   http: typeof http;
   provision: typeof provision;
+  public: typeof public_;
 }>;
 
 /**

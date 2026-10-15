@@ -1,0 +1,22 @@
+﻿export const homeDefaults = {
+  welcomeTitle: 'Welcome with warmth',
+  welcomeDescription: 'A smile and a sincere hello help every person feel they belong.',
+  supportTitle: 'Serve with purpose',
+  supportDescription: 'Guide, assist, and care for others so they can focus on worship.',
+  bannerEyebrow: 'ROOTED IN FAITH. UNITED IN SERVICE.',
+  bannerTitle: 'One church family.\nMany hands to serve.',
+  thanksTitle: 'Thank you for making room for others.',
+  heroEyebrow: 'UTICA BAPTIST CHURCH · SENECA, SOUTH CAROLINA',
+  heroTitle: 'A heart to serve.\nA place to belong.',
+  heroDescription: 'A friendly face. An open door. A helping hand. Our usher ministry makes room for people to feel welcome and encounter the love of Christ.',
+  ministryTitle: 'Small acts of service.\nAn eternal purpose.',
+  ministryDescription: 'At Utica Baptist Church, welcoming people is part of caring for people. Our ushers serve together to help every guest and church family member feel at home, from the first hello to the final amen.',
+  nextTitle: 'Serving simply starts here.',
+  nextDescription: 'New to ushering? Connect with your team leader to learn where to meet, when to arrive, and how you can help. Have a service link already? Open the link your team leader shared to choose your place. No account needed.',
+  spotlightLabel: 'USHER OF THE MONTH',
+  spotlightMonth: '',
+  spotlightName: '',
+  spotlightDescription: 'Faithful service often happens in the quiet moments. This space celebrates an usher whose kindness, dependability, and heart for others make a difference in our church family.',
+  spotlightPhotoAlt: '',
+};
+export const homeFieldNames = Object.keys(homeDefaults) as (keyof typeof homeDefaults)[];
