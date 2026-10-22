@@ -2,8 +2,37 @@
 import { expect, test } from 'vitest';
 import schema from '../convex/schema';
 import { api } from '../convex/_generated/api';
-import { homeDefaults } from '../shared/homeContent';
+import { homeDefaults, additionalHomeFields } from '../shared/homeContent';
 const modules = import.meta.glob('../convex/**/*.{ts,js}');
+
+test('every newly editable text field publishes and older editors preserve the new values', async () => {
+  const t = convexTest(schema, modules);
+  const id = await t.run(ctx => ctx.db.insert('users', { username: 'WillSmith', role: 'admin' }));
+  const admin = t.withIdentity({ subject: `${id}|session` });
+  const content = { ...homeDefaults };
+  for (const [key] of additionalHomeFields) content[key] = `Updated ${key}`;
+  await admin.mutation(api.homepage.save, { content, photoId: null, version: 0 });
+  expect((await t.query(api.homepage.get, {})).content).toEqual(content);
+  const legacyContent = { ...homeDefaults } as Record<string, string>;
+  for (const [key] of additionalHomeFields) delete legacyContent[key];
+  legacyContent.heroTitle = 'Changed by an older editor';
+  await admin.mutation(api.homepage.save, { content: legacyContent as typeof homeDefaults, photoId: null, version: 1 });
+  const result = await t.query(api.homepage.get, {});
+  expect(result.content.heroTitle).toBe('Changed by an older editor');
+  for (const [key] of additionalHomeFields) expect(result.content[key]).toBe(`Updated ${key}`);
+});
+
+test('existing saved pages gain editable defaults without losing their custom text', async () => {
+  const t = convexTest(schema, modules);
+  const id = await t.run(ctx => ctx.db.insert('users', { username: 'BoydCoates', role: 'admin' }));
+  const legacyContent = { ...homeDefaults, heroTitle: 'Our existing welcome' } as Record<string, string>;
+  for (const [key] of additionalHomeFields) delete legacyContent[key];
+  await t.run(ctx => ctx.db.insert('homepage', { key: 'home', content: legacyContent as typeof homeDefaults, version: 3, updatedBy: id }));
+  const result = await t.withIdentity({ subject: `${id}|session` }).query(api.homepage.edit, {});
+  expect(result.content.heroTitle).toBe('Our existing welcome');
+  expect(result.content.footerAddress).toBe(homeDefaults.footerAddress);
+  expect(result.version).toBe(3);
+});
 test('visitors read defaults but cannot edit or generate upload URLs', async () => {
   const t = convexTest(schema, modules);
   expect((await t.query(api.homepage.get, {})).content).toEqual(homeDefaults);

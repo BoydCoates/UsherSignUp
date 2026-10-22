@@ -6,8 +6,9 @@ the home page does not list those links. The admin dashboard is at `/admin`.
 ## Edit the home page
 
 Sign in with an existing admin account and select **Edit home page** in the
-dashboard, or open `/admin?edit=homepage`. Edit the welcome text, ministry copy,
-serving guidance, and closing banner. Under Usher of the Month, set the name,
+dashboard, or open `/admin?edit=homepage`. Every home-page text area is editable,
+including the header, navigation, buttons, section labels, photo placeholders,
+ministry copy, address, and footer. Under Usher of the Month, set the name,
 month, story, and optional portrait. JPG, PNG, and WebP images up to 8 MB are
 accepted. Add a photo description for screen readers. Preview the page, then
 select **Save & publish home page**. Changes are stored in Convex and appear on

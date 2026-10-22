@@ -2,8 +2,10 @@
 import { useMutation, useQuery } from 'convex/react'
 import { api } from '../../convex/_generated/api'
 import { HomeView } from './HomePage'
+import { additionalHomeFields } from '../../shared/homeContent'
 
 const fields = [
+  ...additionalHomeFields,
   ['heroEyebrow', 'Intro label', 200], ['heroTitle', 'Main headline', 200], ['heroDescription', 'Welcome message', 2000],
   ['ministryTitle', 'Ministry heading', 200], ['ministryDescription', 'About the ministry', 2000],
   ['welcomeTitle', 'Welcome role heading', 200], ['welcomeDescription', 'Welcome role description', 2000],
